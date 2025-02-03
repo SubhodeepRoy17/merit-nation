@@ -21,7 +21,7 @@ export default function TypesOfPrograms() {
 
   return (
     <section className="my-12 p-6 border-2 border-black dark:border-white rounded-lg">
-      <h2 className="text-4xl font-bold mb-6 font-serif">Types of BPT Programs</h2>
+      <h2 className="text-4xl font-bold mb-6 font-serif">Types of MBBS Programs</h2>
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/3">
           {programs.map((program) => (

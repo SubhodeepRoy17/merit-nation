@@ -1,31 +1,24 @@
 export default function Advantages() {
   return (
     <section className="mb-12">
-      <h2 className="text-3xl font-bold mb-4 font-serif">Advantages of Getting a BPT</h2>
+      <h2 className="text-3xl font-bold mb-4 font-serif">Advantages of Getting a BAMS</h2>
       <ul className="list-none space-y-4">
         <li>
-          <strong className="font-semibold">Growing Demand:</strong> With an increasing focus on healthcare and
-          wellness, the demand for physiotherapists is on the rise, ensuring excellent job prospects.
+          <strong className="font-semibold">Growing Demand:</strong> With increasing interest in alternative medicine and holistic health, BAMS graduates are in high demand across various healthcare sectors.
         </li>
         <li>
-          <strong className="font-semibold">Diverse Career Opportunities:</strong> BPT graduates can work in hospitals,
-          sports clinics, rehabilitation centers, or even start their own practice, offering a wide range of career
-          paths.
+          <strong className="font-semibold">Wide Career Opportunities:</strong> BAMS graduates can work as Ayurvedic doctors in clinics, hospitals, wellness centers, or even start their own Ayurvedic practice.
         </li>
         <li>
-          <strong className="font-semibold">Personal Satisfaction:</strong> Helping patients recover and improve their
-          quality of life can be incredibly rewarding on a personal level.
+          <strong className="font-semibold">Holistic Healing Approach:</strong> The BAMS program provides a deep understanding of Ayurveda, which is a comprehensive and natural healing system, making it an appealing choice for those interested in alternative medicine.
         </li>
         <li>
-          <strong className="font-semibold">Global Recognition:</strong> A BPT degree is recognized internationally,
-          opening up opportunities for work or further studies abroad.
+          <strong className="font-semibold">Scope for Research and Development:</strong> The Ayurveda sector is growing rapidly, offering opportunities for research, innovation, and development in alternative healthcare.
         </li>
         <li>
-          <strong className="font-semibold">Continuous Learning:</strong> The field of physiotherapy is constantly
-          evolving, providing opportunities for continuous professional development and specialization.
+          <strong className="font-semibold">International Opportunities:</strong> Ayurveda is gaining recognition globally, offering BAMS graduates opportunities to practice or study abroad in countries that are increasingly adopting natural and alternative therapies.
         </li>
       </ul>
     </section>
   )
 }
-

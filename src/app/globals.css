@@ -75,3 +75,22 @@
   }
 }
 
+@keyframes wave {
+  0%,
+  100% {
+    color: hsl(var(--primary));
+  }
+  25% {
+    color: hsl(var(--secondary));
+  }
+  50% {
+    color: hsl(var(--accent));
+  }
+  75% {
+    color: hsl(var(--muted));
+  }
+}
+
+.animate-wave {
+  animation: wave 2s infinite;
+}

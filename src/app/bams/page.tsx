@@ -16,12 +16,12 @@ export default function BDSPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <section className="relative h-80 w-full bg-[url('/medical.png')] bg-cover bg-center text-white flex justify-center items-center">
+      <section className="relative h-80 w-full bg-[url('/bams1.png')] bg-cover bg-center text-white flex justify-center items-center">
         <div className="absolute inset-0 bg-black/50 flex justify-center items-center">
             <div className="relative container px-4 md:px-6 text-center">
             <div className="flex flex-col items-center space-y-4">
-                <h1 className="text-6xl font-bold mb-4 font-serif">BPT</h1>
-                <h2 className="text-3xl font-light">Bachelor of Phisiotherapy</h2>
+                <h1 className="text-6xl font-bold mb-4 font-serif">BAMS</h1>
+                <h2 className="text-3xl font-light">Bachelor of Ayurvedic Medicine and Surgery</h2>
             </div>
             </div>
         </div>

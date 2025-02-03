@@ -1,7 +1,7 @@
 export default function Advantages() {
   return (
     <section className="mb-12">
-      <h2 className="text-3xl font-bold mb-4 font-serif">Advantages of Getting a BPT</h2>
+      <h2 className="text-3xl font-bold mb-4 font-serif">Advantages of Getting a BHMS</h2>
       <ul className="list-none space-y-4">
         <li>
           <strong className="font-semibold">Holistic & Natural Healing:</strong> Homeopathy treats the root cause of diseases using natural remedies with minimal side effects.

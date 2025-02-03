@@ -1,8 +1,25 @@
 export default function KnowMore() {
   const articles = [
-    { title: "The Future of Physiotherapy in India", image: "/placeholder.svg?height=200&width=300", link: "#" },
-    { title: "How to Prepare for BPT Entrance Exams", image: "/placeholder.svg?height=200&width=300", link: "#" },
-    { title: "Career Opportunities after BPT", image: "/placeholder.svg?height=200&width=300", link: "#" },
+    {
+      "title": "The Rise of Ayurveda in Modern Healthcare",
+      "image": "/placeholder.svg?height=200&width=300",
+      "link": "#"
+    },
+    {
+      "title": "How to Prepare for BAMS Entrance Exams",
+      "image": "/placeholder.svg?height=200&width=300",
+      "link": "#"
+    },
+    {
+      "title": "Career Opportunities After BAMS",
+      "image": "/placeholder.svg?height=200&width=300",
+      "link": "#"
+    },
+    {
+      "title": "The Role of BAMS Doctors in Preventive Healthcare",
+      "image": "/placeholder.svg?height=200&width=300",
+      "link": "#"
+    }
   ]
 
   return (

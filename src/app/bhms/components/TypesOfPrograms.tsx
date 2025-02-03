@@ -3,17 +3,21 @@ import { useState } from "react"
 
 const programs = [
   {
-    name: "Regular BPT",
-    description: "A four-year undergraduate program focusing on core physiotherapy principles and practices.",
+    "name": "Regular BHMS",
+    "description": "A five-and-a-half-year undergraduate program focusing on the study of homeopathic medicine and surgery, including clinical training."
   },
   {
-    name: "Integrated BPT",
-    description: "A five-year program that combines BPT with a specialization or research component.",
+    "name": "Integrated BHMS",
+    "description": "A program that combines the BHMS course with additional components like research, specialization, or advanced clinical training over a longer duration."
   },
   {
-    name: "Part-time BPT",
-    description: "Flexible program structure allowing students to balance work and study over an extended period.",
+    "name": "Part-time BHMS",
+    "description": "A flexible program designed for working professionals, allowing them to complete the BHMS course while balancing work and study over an extended period."
   },
+  {
+    "name": "Distance BHMS",
+    "description": "An online or distance learning format for BHMS, offering flexibility for students who cannot attend traditional, in-person classes."
+  }
 ]
 
 export default function TypesOfPrograms() {
@@ -21,7 +25,7 @@ export default function TypesOfPrograms() {
 
   return (
     <section className="my-12 p-6 border-2 border-black dark:border-white rounded-lg">
-      <h2 className="text-4xl font-bold mb-6 font-serif">Types of BPT Programs</h2>
+      <h2 className="text-4xl font-bold mb-6 font-serif">Types of BHMS Programs</h2>
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/3">
           {programs.map((program) => (

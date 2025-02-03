@@ -3,7 +3,7 @@ export default function Overview() {
     <section className="mb-12">
       <h2 className="text-3xl font-bold mb-4 font-serif">Overview</h2>
       <p className="text-lg mb-4">
-        Bachelor of Physiotherapy (BPT) is a comprehensive undergraduate program that equips students with the knowledge and skills to assess, diagnose, and treat various physical disabilities, injuries, and diseases. This four-year course, followed by a six-month internship, covers subjects like anatomy, physiology, biomechanics, and rehabilitation techniques. BPT graduates play a crucial role in healthcare, helping patients recover from injuries, manage chronic conditions, and improve their overall quality of life.
+        BAMS (Bachelor of Ayurvedic Medicine and Surgery) is a 5.5-year undergraduate program focused on the study of Ayurveda, combining theoretical knowledge and practical training in natural healing, medicine, and surgery. Graduates can work as Ayurvedic doctors, consultants, or therapists in hospitals, wellness centers, or private practice. With Ayurveda gaining global recognition, BAMS offers excellent career opportunities and avenues for further specialization and research.
       </p>
     </section>
   )

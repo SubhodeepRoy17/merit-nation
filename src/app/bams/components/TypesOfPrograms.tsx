@@ -3,17 +3,25 @@ import { useState } from "react"
 
 const programs = [
   {
-    name: "Regular BPT",
-    description: "A four-year undergraduate program focusing on core physiotherapy principles and practices.",
+    "name": "General Medicine",
+    "description": "Focuses on the foundational principles of Ayurveda for treating various diseases and disorders through natural methods and holistic healing."
   },
   {
-    name: "Integrated BPT",
-    description: "A five-year program that combines BPT with a specialization or research component.",
+    "name": "Panchakarma",
+    "description": "Specializes in the five purification therapies in Ayurveda, including detoxification and rejuvenation practices for the body and mind."
   },
   {
-    name: "Part-time BPT",
-    description: "Flexible program structure allowing students to balance work and study over an extended period.",
+    "name": "Surgery (Shalya Tantra)",
+    "description": "A specialization in Ayurvedic surgical techniques, involving the treatment of injuries, diseases, and disorders through traditional methods."
   },
+  {
+    "name": "Dravyaguna (Ayurvedic Pharmacology)",
+    "description": "Focuses on the study of medicinal plants, herbs, and their therapeutic properties used in Ayurvedic treatments."
+  },
+  {
+    "name": "Pediatrics (Kaumarbhritya)",
+    "description": "A specialization that deals with the treatment of childhood diseases using Ayurvedic principles and holistic methods."
+  }
 ]
 
 export default function TypesOfPrograms() {

@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight, GraduationCap, Stethoscope, Briefcase, CheckCircle, Calendar } from "lucide-react"
+import { ChevronRight, GraduationCap, Stethoscope, Briefcase, CheckCircle, Calendar, Pill } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 import Header from "@/components/Header"
@@ -76,8 +76,30 @@ export default function HomePage() {
               </Card>
               <Card className="flex flex-col items-center text-center p-6 space-y-4">
                 <Briefcase className="h-12 w-12 text-primary" />
-                <h3 className="text-2xl font-bold">MBA Admissions</h3>
-                <p className="text-muted-foreground">Tailored assistance for top MBA programs.</p>
+                <h3 className="text-2xl font-bold">BCA Admissions</h3>
+                <p className="text-muted-foreground">Tailored assistance for top BCA programs.</p>
+                <Button variant="outline">Learn More</Button>
+              </Card>
+              <Card className="flex flex-col items-center text-center p-6 space-y-4">
+                <Briefcase className="h-12 w-12 text-primary" />
+                <h3 className="text-2xl font-bold">Business Administration Admission</h3>
+                <p className="text-muted-foreground">Guidance for BBA and MBA admissions.</p>
+                <Button variant="outline">Learn More</Button>
+              </Card>
+
+              {/* Nursing Admission Card */}
+              <Card className="flex flex-col items-center text-center p-6 space-y-4">
+                <Stethoscope className="h-12 w-12 text-primary" />
+                <h3 className="text-2xl font-bold">Nursing Admission</h3>
+                <p className="text-muted-foreground">Comprehensive support for B.Sc & M.Sc Nursing programs.</p>
+                <Button variant="outline">Learn More</Button>
+              </Card>
+
+              {/* Pharmacy Admission Card */}
+              <Card className="flex flex-col items-center text-center p-6 space-y-4">
+                <Pill className="h-12 w-12 text-primary" />
+                <h3 className="text-2xl font-bold">Pharmacy Admission</h3>
+                <p className="text-muted-foreground">Admission guidance for B.Pharm & M.Pharm courses.</p>
                 <Button variant="outline">Learn More</Button>
               </Card>
             </div>

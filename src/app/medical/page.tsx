@@ -54,6 +54,9 @@ export default function Home() {
           Medical
           <br />
           Admissions
+          <br />
+          <br />
+          (UG)
         </h1>
       </div>
       <div className="container mx-auto px-4 py-12">

@@ -6,21 +6,40 @@ export default function TopColleges() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const colleges = [
-    { rank: 1, name: "AIIMS Delhi", exams: "AIIMS MBBS" },
-    { rank: 2, name: "CMC Vellore", exams: "CMC Vellore Entrance Exam" },
-    { rank: 3, name: "JIPMER Puducherry", exams: "JIPMER MBBS" },
-    { rank: 4, name: "MAHE Manipal", exams: "MAHE OET" },
-    { rank: 5, name: "BHU Varanasi", exams: "BHU UET" },
+    {
+      "rank": 1,
+      "name": "Bharati Vidyapeeth University, Pune",
+      "exams": "BVP CET"
+    },
+    {
+      "rank": 2,
+      "name": "Sri Sri University, Cuttack",
+      "exams": "Sri Sri University Entrance Test"
+    },
+    {
+      "rank": 3,
+      "name": "Jamia Hamdard University, New Delhi",
+      "exams": "Jamia Hamdard Entrance Exam"
+    },
+    {
+      "rank": 4,
+      "name": "Aligarh Muslim University (AMU), Aligarh",
+      "exams": "AMU Entrance Exam"
+    },
+    {
+      "rank": 5,
+      "name": "National Institute of Ayurveda, Jaipur",
+      "exams": "NEET-UG"
+    }
   ];
 
   return (
     <section className="my-12 p-6 border-2 border-black dark:border-white rounded-lg">
-      <h2 className="text-4xl font-bold mb-6 font-serif">Top 5 BPT Colleges in India</h2>
+      <h2 className="text-4xl font-bold mb-6 font-serif">Top 5 BAMS Colleges in India</h2>
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/3">
-          <p className="font-verdana text-lg">
-            These top institutions offer excellent BPT programs, providing students with quality education and
-            promising career prospects in the field of physiotherapy.
+          <p className="font-verdana text-lg">    
+            These top institutions offer excellent BAMS programs, providing students with quality education in Ayurveda and promising career prospects in the field of holistic healthcare and natural healing.
           </p>
         </div>
         <div className="md:w-2/3">

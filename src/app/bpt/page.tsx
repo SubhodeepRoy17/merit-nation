@@ -16,7 +16,7 @@ export default function BDSPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <section className="relative h-80 w-full bg-[url('/medical.png')] bg-cover bg-center text-white flex justify-center items-center">
+      <section className="relative h-80 w-full bg-[url('/bpt1.png')] bg-cover bg-center text-white flex justify-center items-center">
         <div className="absolute inset-0 bg-black/50 flex justify-center items-center">
             <div className="relative container px-4 md:px-6 text-center">
             <div className="flex flex-col items-center space-y-4">

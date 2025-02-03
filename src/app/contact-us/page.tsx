@@ -57,6 +57,36 @@ export default function ContactUsPage() {
             <ContactForm />
         </div>
         </div>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+            <div className="container px-4 md:px-6">
+                <div className="flex flex-col items-center space-y-4 text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-1l md:text-2l">
+                    <u>INDIA ADMISSIONS</u>
+                </h2>
+                <p className="mx-auto max-w-full text-primary-foreground/80 md:text-xl">
+                    UG COURSE : MBBS | BDS | NURSING | B.Tech | B.Pharma | BBA | BCA | LLB 
+                    <br />
+                    PG COURSE : MD | MDS | M.PHARM | MBA | MCA | MCI | DCI | INC | BCI | PCI | AICTE APPROVED
+                </p>
+                <div className="w-full text-primary-foreground/80">
+                    <p className="mx-auto max-w-full text-primary-foreground/80 sm:text-l text-center">
+                    ALL ADMISSIONS ARE SUBJECT TO GOVT. OF INDIA AND COLLEGE GUIDELINE
+                    </p>
+
+                    {/* Full-width divider */}
+                    <div className="w-full px-4">
+                    <div className="border-t border-white dark:border-black my-4 w-full"></div>
+                    </div>
+
+                    <p className="mx-auto max-w-full text-primary-foreground/80 md:text-xl text-center">
+                    P.S. - Abacus, Newtown, Action Area, IIE, Kolkata - 700161, 3rd Floor, Unit-311
+                    <br />
+                    Contact No. : +91 9810921650
+                    </p>
+                </div>
+                </div>
+            </div>
+        </section>
         <Footer />
     </div>
   )
