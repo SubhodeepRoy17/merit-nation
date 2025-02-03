@@ -13,9 +13,8 @@ import Header from "@/components/Header"
 import Footer from "@/components/footer"
 
 export default function HomePage() {
-  const { theme, setTheme } = useTheme()
+  const {  } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const collegeImages = [
     "/college1.png",
@@ -162,8 +161,8 @@ export default function HomePage() {
                       <p className="text-sm text-muted-foreground">Admitted to Top University</p>
                     </div>
                     <p className="text-muted-foreground">
-                      "MERIT NATIONS helped me achieve my dream of studying at a top university. Their guidance was
-                      invaluable!"
+                    &quot;MERIT NATIONS helped me achieve my dream of studying at a top university. Their guidance was
+                      invaluable!&quot;
                     </p>
                   </CardContent>
                 </Card>
@@ -226,7 +225,7 @@ export default function HomePage() {
                 Ready to Start Your Journey?
               </h2>
               <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                Let's work together to make your college admission dreams a reality.
+                Let&apos;s work together to make your college admission dreams a reality.
               </p>
               <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 Get Started Today

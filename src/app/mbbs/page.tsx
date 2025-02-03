@@ -11,7 +11,7 @@ import KnowMore from "./components/KnowMore"
 import Footer from "@/components/footer"
 
 export default function MBBSPage() {
-  const { theme } = useTheme()
+  const {  } = useTheme()
 
   return (
     <div className="min-h-screen bg-background text-foreground">

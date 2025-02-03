@@ -43,7 +43,7 @@ export default function ContactForm() {
       <div className="flex flex-col items-center justify-center h-full">
         <CheckCircleIcon className="w-24 h-24 text-green-500 mb-4" />
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Application Submitted!</h2>
-        <p className="text-lg text-gray-600">Thank you for your interest. We'll be in touch soon.</p>
+        <p className="text-lg text-gray-600">Thank you for your interest. We&apos;ll be in touch soon.</p>
       </div>
     )
   }
@@ -93,8 +93,12 @@ export default function ContactForm() {
             name="graduationYear"
             required
             value={formData.graduationYear}
-            onValueChange={(value) => handleChange({ target: { name: "graduationYear", value } } as any)}
-          >
+            onValueChange={(value) =>
+                handleChange({
+                target: { name: "graduationYear", value },
+                } as React.ChangeEvent<HTMLInputElement>) 
+            }
+            >
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select Year" />
             </SelectTrigger>
@@ -115,7 +119,7 @@ export default function ContactForm() {
           name="interestedProgram"
           required
           value={formData.interestedProgram}
-          onValueChange={(value) => handleChange({ target: { name: "interestedProgram", value } } as any)}
+          onValueChange={(value) => handleChange({ target: { name: "interestedProgram", value } } as  React.ChangeEvent<HTMLInputElement>)}
         >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select Program" />

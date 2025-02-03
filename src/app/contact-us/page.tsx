@@ -13,7 +13,7 @@ export default function ContactUsPage() {
             <div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">Contact Us</h1>
             <p className="text-lg lg:text-xl mb-6 lg:mb-8" style={{fontFamily: 'Verdana' , fontStyle: 'italic'}}>
-                At Merit Nations, we're dedicated to guiding you toward your dream college and career—whether it's a top-tier B-School, an elite Engineering institute, a prestigious Medical college, or an MBA program that aligns with your aspirations.
+                At Merit Nations, we&apos;re dedicated to guiding you toward your dream college and career—whether it&apos;s a top-tier B-School, an elite Engineering institute, a prestigious Medical college, or an MBA program that aligns with your aspirations.
             </p>
             </div>
             <div className="space-y-4">

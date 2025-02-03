@@ -5,7 +5,7 @@ export default function Advantages() {
       <ul className="list-none pl-0 font-verdana">
         <li className="mb-4">
           <strong className="block mb-1">Rewarding Career:</strong>
-          BDS offers a fulfilling career in healthcare, allowing you to improve people's oral health and overall
+          BDS offers a fulfilling career in healthcare, allowing you to improve people&apos;s oral health and overall
           well-being.
         </li>
         <li className="mb-4">
