@@ -1,44 +1,40 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { useEffect, useRef } from "react"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
-  const letterRefs = useRef<(HTMLSpanElement | null)[]>([])
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [letterColors, setLetterColors] = useState(
+    "MERIT NATIONS".split("").map(() => "hsl(0, 100%, 50%)")
+  )
 
-  useEffect(() => {
-    const letters = letterRefs.current
-    let frames = 0
-
-    const animateColors = () => {
-      frames++
-      letters.forEach((letter, index) => {
-        if (letter) {
-          const hue = (frames + index * 10) % 360
-          letter.style.color = `hsl(${hue}, 100%, 50%)`
-        }
-      })
-      requestAnimationFrame(animateColors)
-    }
-
-    animateColors()
-
-    return () => cancelAnimationFrame(frames)
-  }, [])
+  const animateLetterColors = () => {
+    setLetterColors(prevColors => 
+      prevColors.map((_, index) => 
+        `hsl(${(Date.now() / 10 + index * 10) % 360}, 100%, 50%)`
+      )
+    )
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
+        {/* Logo and Brand */}
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/logo.png" alt="Merit Nations Logo" width={65} height={65} />
-          <span className="font-bold text-xl">
+          <span 
+            className="font-bold text-xl"
+            onMouseEnter={animateLetterColors}
+          >
             {"MERIT NATIONS".split("").map((letter, index) => (
               <span
                 key={index}
-                ref={(el) => { letterRefs.current[index] = el }}
+                style={{ color: letterColors[index] }}
                 className="inline-block transition-colors duration-300"
               >
                 {letter}
@@ -46,6 +42,20 @@ export default function Header() {
             ))}
           </span>
         </Link>
+
+        {/* Mobile Menu and Theme Toggle */}
+        <div className="flex items-center md:hidden space-x-2">
+          <ThemeToggle />
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X /> : <Menu />}
+          </Button>
+        </div>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#services">
             Services
@@ -63,12 +73,60 @@ export default function Header() {
             Contact Us
           </Link>
         </nav>
-        <div className="flex items-center space-x-4">
+
+        {/* Desktop Right Side Actions */}
+        <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="hidden md:inline-flex">Get Started</Button>
+          <Button>Get Started</Button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 top-16 bg-background/95 backdrop-blur-sm md:hidden">
+            <nav className="flex flex-col p-6 space-y-6 bg-background">
+              <Link 
+                className="text-lg font-medium hover:bg-accent hover:text-accent-foreground p-3 rounded-lg transition-colors" 
+                href="/#services"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                className="text-lg font-medium hover:bg-accent hover:text-accent-foreground p-3 rounded-lg transition-colors" 
+                href="/about-us"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
+                className="text-lg font-medium hover:bg-accent hover:text-accent-foreground p-3 rounded-lg transition-colors" 
+                href="/#success-stories"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Success Stories
+              </Link>
+              <Link 
+                className="text-lg font-medium hover:bg-accent hover:text-accent-foreground p-3 rounded-lg transition-colors" 
+                href="/#resources"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resources
+              </Link>
+              <Link 
+                className="text-lg font-medium hover:bg-accent hover:text-accent-foreground p-3 rounded-lg transition-colors" 
+                href="/contact-us"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <div className="flex justify-between items-center mt-4">
+                <ThemeToggle />
+                <Button>Get Started</Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   )
 }
-
