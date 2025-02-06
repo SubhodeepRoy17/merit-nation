@@ -120,7 +120,6 @@ export default function Header() {
                 Contact Us
               </Link>
               <div className="flex justify-between items-center mt-4">
-                <ThemeToggle />
                 <Button>Get Started</Button>
               </div>
             </nav>
