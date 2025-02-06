@@ -50,18 +50,17 @@ export default function TypesOfPrograms({ activeProgram }: TypesOfProgramsProps)
         <div className="w-1/3 pr-4 border-r">
           {programs[activeProgram].map((program) => (
             <button
-            key={program.name}
-            onClick={() => setSelectedProgram(program.name)}
-            className={`block w-full text-left p-4 mb-2 rounded-full border-2 border-black dark:border-white
-            transition-all duration-300 ease-in-out
-            ${
-                selectedProgram === program.name
-                ? "bg-black dark:bg-white text-white dark:text-black"
-                : "bg-transparent hover:bg-blue-500 dark:hover:bg-blue-600 hover:text-white"
-            }`}
-        >
-            {program.name}
-        </button>  
+                key={program.name}
+                onClick={() => setSelectedProgram(program.name)}
+                className={`block w-full text-left p-4 mb-2 rounded-lg shadow transition-all duration-300 ease-in-out
+                ${
+                    selectedProgram === program.name
+                    ? "bg-black dark:bg-white text-white dark:text-black"
+                    : "bg-white dark:bg-gray-800 hover:bg-blue-500 dark:hover:bg-blue-600 hover:text-white"
+                }`}
+            >
+                {program.name}
+            </button>  
           ))}
         </div>
         <div className="w-2/3 pl-4">{programs[activeProgram].find((p) => p.name === selectedProgram)?.description}</div>
