@@ -14,10 +14,15 @@ import Slider from "react-slick"
 // You need to import slick carousel styles for the carousel to work properly
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { link } from "fs"
 
 // Define custom arrow components
-const CustomPrevArrow = ({ onClick, currentSlide, slideCount, ...props }: any) => (
+interface CustomArrowProps {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  currentSlide?: number;
+  slideCount?: number;
+}
+
+const CustomPrevArrow: React.FC<CustomArrowProps> = ({ onClick, ...props }) => (
   <button
     {...props}
     onClick={onClick}
@@ -28,30 +33,22 @@ const CustomPrevArrow = ({ onClick, currentSlide, slideCount, ...props }: any) =
   </button>
 );
 
-const CustomNextArrow = ({ onClick, currentSlide, slideCount, ...props }: any) => (
+const CustomNextArrow: React.FC<CustomArrowProps> = ({ onClick, ...props }) => (
   <button
+    {...props}
     onClick={onClick}
     className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-primary text-white p-2 rounded-full shadow-lg"
     style={{ zIndex: 10 }}
   >
     <ChevronRight className="h-6 w-6" />
   </button>
-);
+ );
 
 export default function HomePage() {
   const {} = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  const collegeImages = [
-    "/college1.png",
-    "/college2.png",
-    "/college3.png",
-    "/college4.png",
-    "/college5.png",
-  ]
-
-
-  const collegeDetails = [
+    const collegeDetails = [
     {
       image: "/college1.png",
       name: "IIT Delhi",

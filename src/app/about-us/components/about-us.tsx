@@ -57,7 +57,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              We believe in a personalized approach, tailoring our services to each student's unique strengths,
+              We believe in a personalized approach, tailoring our services to each student&apos;s unique strengths,
               interests, and goals. Our team of experienced consultants provides expert guidance on every aspect of the
               college application process.
             </motion.p>
