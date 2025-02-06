@@ -47,16 +47,16 @@ export default function Header() {
           </span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#services">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#services">
             Services
           </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/about-us">
             About Us
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#success-stories">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#success-stories">
             Success Stories
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#resources">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#resources">
             Resources
           </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/contact-us">
