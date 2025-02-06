@@ -43,12 +43,10 @@ export default function EntranceExams({ activeProgram }: EntranceExamsProps) {
   const [selectedExam, setSelectedExam] = useState(exams[activeProgram][0].name)
 
   return (
-    <Card className="mb-12">
-      <CardHeader>
-        <CardTitle className="text-2xl font-serif">Top {activeProgram} Entrance Exams</CardTitle>
-      </CardHeader>
-      <CardContent className="flex">
-        <div className="w-1/3 pr-4 border-r">
+    <section className="my-12 p-6 border-2 border-black dark:border-white rounded-lg">
+      <h2 className="text-4xl font-bold mb-6 font-serif">Top {activeProgram} Entrance Exams</h2>
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="md:w-1/3">
           {exams[activeProgram].map((exam) => (
             <button
             key={exam.name}
@@ -65,9 +63,12 @@ export default function EntranceExams({ activeProgram }: EntranceExamsProps) {
           </button>
           ))}
         </div>
-        <div className="w-2/3 pl-4">{exams[activeProgram].find((e) => e.name === selectedExam)?.description}</div>
-      </CardContent>
-    </Card>
+        <div className="md:w-2/3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h3 className="text-xl font-bold mb-2 font-verdana">{selectedExam}</h3>
+          <p className="font-verdana">{exams[activeProgram].find((e) => e.name === selectedExam)?.description}</p>
+        </div>
+      </div>
+    </section>
   )
 }
 
