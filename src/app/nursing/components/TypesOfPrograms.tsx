@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface TypesOfProgramsProps {
   activeProgram: "B.Sc" | "M.Sc"
