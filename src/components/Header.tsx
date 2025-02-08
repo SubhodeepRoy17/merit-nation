@@ -181,16 +181,17 @@ export default function Header() {
                   </div>
                 )}
               </div>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#services">
+              <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/#services" onClick={() => setIsMenuOpen(false)}>
                 Services
               </Link>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/about-us">
+              <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/about-us" 
+              onClick={() => setIsMenuOpen(false)}>
                 About Us
               </Link>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#success-stories">
+              <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/#success-stories" onClick={() => setIsMenuOpen(false)}>
                 Success Stories
               </Link>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#resources">
+              <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/#resources" onClick={() => setIsMenuOpen(false)}>
                 Resources
               </Link>
               <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/contact-us" onClick={() => setIsMenuOpen(false)}>
