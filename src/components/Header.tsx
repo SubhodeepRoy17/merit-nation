@@ -151,37 +151,48 @@ export default function Header() {
                 {isDropdownOpen && (
                   <div className="flex flex-col space-y-2 pl-4">
                     <Link 
-                      href="/top-colleges-west-bengal" 
+                      href="/top-colleges-wb" 
                       className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded-md"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Top Colleges in West Bengal
                     </Link>
                     <Link 
-                      href="/top-colleges-mumbai" 
-                      className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded-md"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Top Colleges in Mumbai
-                    </Link>
-                    <Link 
-                      href="/top-colleges-delhi" 
+                      href="/top-colleges-dl" 
                       className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded-md"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Top Colleges in Delhi
                     </Link>
                     <Link 
-                      href="/top-colleges-gujarat" 
+                      href="/top-colleges-pu" 
                       className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded-md"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Top Colleges in Gujarat
+                      Top Colleges in Pune
+                    </Link>
+                    <Link 
+                      href="/top-colleges-bl" 
+                      className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded-md"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Top Colleges in Bangalore
                     </Link>
                   </div>
                 )}
               </div>
-
+              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#services">
+                Services
+              </Link>
+              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/about-us">
+                About Us
+              </Link>
+              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#success-stories">
+                Success Stories
+              </Link>
+              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#resources">
+                Resources
+              </Link>
               <Link className="text-lg font-medium hover:bg-accent p-3 rounded-lg transition-colors" href="/contact-us" onClick={() => setIsMenuOpen(false)}>
                 Contact Us
               </Link>
