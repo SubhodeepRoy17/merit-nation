@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { ChevronRight, ChevronLeft, GraduationCap, Stethoscope, Briefcase, CheckCircle, Calendar, Pill } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
@@ -14,6 +14,7 @@ import Slider from "react-slick"
 // You need to import slick carousel styles for the carousel to work properly
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { motion } from "framer-motion"
 
 // Define custom arrow components
 interface CustomArrowProps {
@@ -26,7 +27,7 @@ const CustomPrevArrow: React.FC<CustomArrowProps> = ({ onClick, ...props }) => (
   <button
     {...props}
     onClick={onClick}
-    className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-primary text-white p-2 rounded-full shadow-lg"
+    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary dark:bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-primary/80 dark:hover:bg-gray-700 transition-all duration-300"
     style={{ zIndex: 10 }}
   >
     <ChevronLeft className="h-6 w-6" />
@@ -37,12 +38,13 @@ const CustomNextArrow: React.FC<CustomArrowProps> = ({ onClick, ...props }) => (
   <button
     {...props}
     onClick={onClick}
-    className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-primary text-white p-2 rounded-full shadow-lg"
+    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary dark:bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-primary/80 dark:hover:bg-gray-700 transition-all duration-300"
     style={{ zIndex: 10 }}
   >
     <ChevronRight className="h-6 w-6" />
   </button>
- );
+);
+
 
 export default function HomePage() {
   const {} = useTheme()
@@ -129,6 +131,26 @@ export default function HomePage() {
   if (!mounted) {
     return null
   }
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 1 } }, // Mobile: Show 1 slide at a time
+    ],
+  }
+
+  const timelineItems = [
+    { title: "15+ Years of Experience", desc: "Proven track record of success in admissions consulting." },
+    { title: "95% Success Rate", desc: "Our students consistently get into their top-choice programs." },
+    { title: "Personalized Approach", desc: "Tailored strategies to highlight your unique strengths." },
+  ]
 
   const settings = {
     dots: true,
@@ -235,68 +257,73 @@ export default function HomePage() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section id="why-choose-us" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
+        <section id="why-choose-us" className="w-full py-16 md:py-24 lg:py-32 bg-background overflow-hidden">
+          <div className="container px-6 md:px-12">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16">
               Why Choose Us?
             </h2>
-            <div className="grid gap-6 lg:grid-cols-3">
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">15+ Years of Experience</h3>
-                  <p className="text-muted-foreground">Proven track record of success in admissions consulting.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">95% Success Rate</h3>
-                  <p className="text-muted-foreground">Our students consistently get into their top-choice programs.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Personalized Approach</h3>
-                  <p className="text-muted-foreground">Tailored strategies to highlight your unique strengths.</p>
-                </div>
+            <div className="relative flex items-center overflow-x-auto no-scrollbar pb-10">
+              {/* Animated Progress Line */}
+              <motion.div
+                className="absolute top-1/2 left-0 h-[4px] w-full bg-gradient-to-r from-blue-500 to-purple-600 dark:from-green-400 dark:to-blue-500"
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 1.5 }}
+              ></motion.div>
+              {/* Grid Wrapper */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-24">
+                {timelineItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.3 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col items-center text-center"
+                  >
+                    {/* Badge Icon */}
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg bg-indigo-500 dark:bg-green-500 dark:shadow-green-400/40 shadow-indigo-400/40">
+                      <CheckCircle className="h-7 w-7 text-white" />
+                    </div>
+
+                    {/* Card */}
+                    <div className="p-6 rounded-lg shadow-xl border backdrop-blur-lg mt-6 bg-white/70 border-gray-200 shadow-indigo-500/20 dark:bg-gray-900/80 dark:border-gray-700 dark:shadow-green-400/20">
+                      <h3 className="text-xl font-bold">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Success Stories Section */}
-        <section id="success-stories" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
-              Success Stories
-            </h2>
-            <div className="grid gap-6 lg:grid-cols-3">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="flex flex-col space-y-4">
-                  <CardContent className="flex flex-col items-center text-center space-y-4">
-                    <Image
-                      src={`/profile1.png`}
-                      alt={`Student ${i}`}
-                      width={100}
-                      height={100}
-                      className="rounded-full"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold">Student Name</h3>
-                      <p className="text-sm text-muted-foreground">Admitted to Top University</p>
-                    </div>
-                    <p className="text-muted-foreground">
-                    &quot;MERIT NATIONS helped me achieve my dream of studying at a top university. Their guidance was
-                      invaluable!&quot;
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+      {/* Success Stories - Cool Carousel */}
+      <section id="success-stories" className="w-full py-16 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <div className="container px-6 md:px-12">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-center mb-16">
+            Success Stories
+          </h2>
+          <Slider {...sliderSettings} className="mx-auto max-w-4xl">
+            {[
+              { name: "Jane Doe", university: "Harvard University", image: "/profile.png" },
+              { name: "John Smith", university: "MIT", image: "/profile.png" },
+              { name: "Emily Brown", university: "Stanford University", image: "/profile.png" },
+            ].map((student, index) => (
+              <div key={index} className="p-6">
+                <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg text-center flex flex-col items-center">
+                  <Image src={student.image} alt={student.name} width={100} height={100} className="rounded-full mb-4" />
+                  <h3 className="text-xl font-bold">{student.name}</h3>
+                  <p className="text-sm text-muted-foreground">Admitted to {student.university}</p>
+                  <p className="mt-4 text-muted-foreground">
+                    &quot;MERIT NATIONS helped me achieve my dream of studying at a top university. Their guidance was invaluable!&quot;
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
 
         {/* Helpful Resources Section */}
         <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
