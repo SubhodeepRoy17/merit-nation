@@ -1,3 +1,5 @@
+// merit-nation\src\app\top-colleges-wb\components\CollegeCard.tsx
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 

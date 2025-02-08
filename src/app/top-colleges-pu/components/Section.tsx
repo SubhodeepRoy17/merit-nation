@@ -25,7 +25,7 @@ const backgroundImages: { [key: string]: string } = {
   "Engineering": "/backgrounds/engineer.png",
   "Pharmacy": "/backgrounds/pharmacy.png",
   "Nursing": "/backgrounds/medicalmain.png",
-  "Business": "/backgrounds/business.png", // Add more as needed
+  "Business": "/backgrounds/business.png",
 }
 
 export default function Section({
@@ -41,24 +41,24 @@ export default function Section({
   // Get the correct background image based on title
   const backgroundImage = backgroundImages[title] || "/backgrounds/default.png"
 
-  // Debugging: Check which image is being selected
-  console.log(`Section: ${title}, Background Image: ${backgroundImage}`)
-
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
 
     const scrollAmount = direction === "left" ? -1 : 1
+    const speedMultiplier = direction === "right" ? 1.2 : 1 // Faster right-to-left speed
     let animationId: number
 
     const scroll = () => {
       if (isActive) {
-        container.scrollLeft += scrollAmount
-        if (
-          (direction === "left" && container.scrollLeft <= 0) ||
-          (direction === "right" && container.scrollLeft >= container.scrollWidth - container.clientWidth)
-        ) {
-          container.scrollLeft = direction === "left" ? container.scrollWidth - container.clientWidth : 0
+        container.scrollLeft += scrollAmount * speedMultiplier
+
+        // Looping logic to ensure all cards appear before restarting
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+          container.scrollLeft = 0
+        }
+        if (container.scrollLeft <= 0) {
+          container.scrollLeft = container.scrollWidth - container.clientWidth
         }
       }
       animationId = requestAnimationFrame(scroll)
@@ -101,8 +101,9 @@ export default function Section({
         animate={isActive ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {colleges.map((college) => (
-          <CollegeCard key={college.name} name={college.name} image={college.image} applyLink={college.applyLink} />
+        {/* Duplicate cards to enable smooth looping */}
+        {[...colleges, ...colleges].map((college, index) => (
+          <CollegeCard key={index} name={college.name} image={college.image} applyLink={college.applyLink} />
         ))}
       </motion.div>
     </motion.div>
